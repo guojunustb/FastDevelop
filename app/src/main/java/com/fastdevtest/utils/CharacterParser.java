@@ -41,6 +41,7 @@ public class CharacterParser {
             "zheng", "zhi", "zhong", "zhou", "zhu", "zhua", "zhuai", "zhuan", "zhuang", "zhui",
             "zhun", "zhuo", "zi", "zong", "zou", "zu", "zuan", "zui", "zun", "zuo"
     };
+
     private static int[] pyvalue = new int[] {
             -20319, -20317, -20304, -20295, -20292, -20283, -20265, -20257, -20242, -20230, -20051,
             -20036, -20032, -20026, -20002, -19990, -19986, -19982, -19976, -19805, -19784, -19775,
@@ -79,8 +80,11 @@ public class CharacterParser {
             -10790, -10780, -10764, -10587, -10544, -10533, -10519, -10331, -10329, -10328, -10322,
             -10315, -10309, -10307, -10296, -10281, -10274, -10270, -10262, -10260, -10256, -10254
     };
+
     private static CharacterParser characterParser = new CharacterParser();
+
     private StringBuilder buffer;
+
     private String resource;
 
     public static CharacterParser getInstance() {

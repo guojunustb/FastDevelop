@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.fastdevtest"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -28,7 +28,15 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.alibaba:fastjson:1.2.8'
     compile 'com.orhanobut:logger:1.11'
-    compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.jakewharton.timber:timber:4.1.2'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.facebook.fresco:fresco:0.9.0'
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit-converters:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    
 }

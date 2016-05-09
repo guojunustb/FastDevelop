@@ -11,7 +11,7 @@ import android.view.WindowManager;
 /**
  * 屏幕亮度相关的工具类
  */
-public class BrightnessUtils {
+public class ScreenBrightnessUtils {
     /**
      * 判断是否开启了自动亮度调节
      */
