@@ -16,10 +16,33 @@ android {
     }
     defaultConfig {
         applicationId "com.fastdevtest"
-        minSdkVersion 19
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+    }
+    applicationVariants.all { variant ->
+        def outputFile = variant.outputs[0].outputFile;
+        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+            // Out apk name 'yzb-baidu-V2.0.0.150720-debug.apk
+            def fileName = "FastDevelop-${variant.productFlavors[0].name}-V${defaultConfig.versionName}-${variant.buildType.name}.apk"
+            variant.outputs[0].outputFile = new File(outputFile.parent, fileName)
+        }
+    }
+    productFlavors {
+        def path = "channel_debug.txt"
+        file(path).eachLine { line ->
+            def words = line.split(':')
+            def channel = words[0]
+            def umengKey = words[1]
+            if (channel == '') {
+                channel = umengKey
+            }
+            def name = channel
+            "$name" {
+                manifestPlaceholders = [CHANNEL_VALUE: channel, UMENG_KEY_VALUE: umengKey]
+            }
+        }
     }
     buildTypes {
         release {
@@ -52,5 +75,6 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit-converters:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
-    
+    compile files('libs/sun.misc.BASE64Decoder.jar')
+
 }
